@@ -1,0 +1,176 @@
+:root {
+  --main-bg: linear-gradient(to top right, #e0f7fa, #ffffff);
+  --primary: #00796b;
+  --accent: #009688;
+  --light: #ffffff;
+  --text: #333333;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --main-bg: #121212;
+  --primary: #26a69a;
+  --accent: #4dd0e1;
+  --light: #1e1e1e;
+  --text: #eeeeee;
+  --shadow: rgba(255, 255, 255, 0.05);
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--main-bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.4s, color 0.4s;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem 1.2rem;
+  background-color: var(--primary);
+  color: var(--light);
+  box-shadow: 0 4px 6px var(--shadow);
+  transition: background-color 0.4s;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin: 0 0 0.3rem;
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+  padding: 1rem;
+  background-color: #b2dfdb;
+  border-radius: 8px;
+  max-width: 900px;
+  box-shadow: 0 2px 5px var(--shadow);
+}
+
+select,
+button {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid var(--accent);
+  background-color: var(--light);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+button:hover,
+select:hover {
+  background-color: #e0f2f1;
+  cursor: pointer;
+}
+
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.card {
+  background: var(--light);
+  border-left: 6px solid var(--primary);
+  padding: 1.2rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: transform 0.3s ease, background 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+.card-details {
+  display: none;
+  margin-top: 0.8rem;
+}
+
+.card.active .card-details {
+  display: block;
+}
+
+.toggle-btn {
+  margin-top: 0.5rem;
+  background: var(--accent);
+  color: var(--light);
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: #00796b;
+}
+
+
+footer {
+  text-align: center;
+  padding: 1.2rem;
+  background: var(--primary);
+  color: var(--light);
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  transition: background-color 0.4s;
+}
+
+footer a {
+  color: #80cbc4;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.7rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .card h2 {
+    font-size: 1.2rem;
+  }
+
+  .toggle-btn {
+    width: 100%;
+  }
+}

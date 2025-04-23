@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunlight Tracker</title>
+  <link rel="stylesheet" href="Lab6.css" />
+</head>
+<body>
+  <header>
+    <h1>☀️ Sunlight Tracker</h1>
+    <p>Explore sunrise, sunset and more – toggle insights for any location.</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label for="location">Choose a city:</label>
+      <select id="location">
+        <option value="40.7128,-74.0060">New York, NY</option>
+        <option value="34.0522,-118.2437">Los Angeles, CA</option>
+        <option value="41.8781,-87.6298">Chicago, IL</option>
+        <option value="29.7604,-95.3698">Houston, TX</option>
+        <option value="33.4484,-112.0740">Phoenix, AZ</option>
+        <option value="39.7392,-104.9903">Denver, CO</option>
+        <option value="47.6062,-122.3321">Seattle, WA</option>
+        <option value="25.7617,-80.1918">Miami, FL</option>
+        <option value="51.5072,-0.1276">London, UK</option>
+        <option value="35.6895,139.6917">Tokyo, JP</option>
+      </select>
+      <button id="getLocation">📍 Use My Location</button>
+      <button id="toggleTheme">🌓 Toggle Theme</button>
+    </section>
+
+    <section id="results" class="results-grid">
+      <!-- Cards will be dynamically inserted here -->
+    </section>
+  </main>
+
+  <footer>
+    <p>🌐 Powered by <a href="https://sunrisesunset.io" target="_blank">sunrisesunset.io</a></p>
+  </footer>
+
+  <script src="Lab6.js"></script>
+</body>
+</html>
